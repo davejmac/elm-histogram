@@ -6,8 +6,8 @@ All of the Elm code lives in `src/elm/Main.elm` and relies on the [elm-lang/html
 
 ## Requirements
 
-- Elm
-- Yarn
+- Elm (https://guide.elm-lang.org/install.html)
+- Yarn (https://yarnpkg.com/lang/en/docs/install/)
 
 ## Build Instructions
 

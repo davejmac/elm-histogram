@@ -1,0 +1,24 @@
+{
+  "name": "elm-histogram",
+  "version": "0.0.1",
+  "description": "Histogram demo using Elm",
+  "main": "src/js/index.js",
+  "repository": "git@github.com:davejmac/elm-histogram.git",
+  "scripts": {
+    "test": "",
+    "start": "gulp",
+    "lint": "eslint --ext .js,.jsx ./src/js/"
+  },
+  "author": "davejmac <david.mcnamara@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.1",
+    "gulp": "^3.9.1",
+    "gulp-elm": "^0.6.1",
+    "gulp-live-server": "^0.0.30",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-util": "^3.0.8"
+  }
+}

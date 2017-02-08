@@ -2,3 +2,9 @@
 elm-stuff/
 # elm-repl generated files
 repl-temp-*
+
+# node
+node_modules/
+
+# compiled js
+src/js/elm.js

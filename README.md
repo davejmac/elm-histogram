@@ -4,8 +4,6 @@ All of the Elm code lives in `src/elm/Main.elm` and relies on the [elm-lang/html
 
 [html]: http://package.elm-lang.org/packages/elm-lang/html/latest
 
-There also is a port handler set up in `index.html` to store the Elm application's state in `localStorage` on every update.
-
 ## Requirements
 
 - Elm

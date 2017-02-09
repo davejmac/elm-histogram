@@ -52,9 +52,11 @@ update msg model =
 view : Model -> Html Msg
 view model =
   div []
-    [ input [ type_ "number", placeholder "Some Number", onInput NewValue ] []
-    , button [ onClick Add ] [ text "Add" ]
-    , div []
+    [ div [class "input-data"]
+        [ input [ type_ "number", placeholder "Some Number", onInput NewValue ] []
+        , button [ onClick Add ] [ text "Add" ]
+        ]
+    , div [ class "chart" ]
       [ h2 [] [ (text "Numbers") ]
       , p [] [ (text model.valuesList) ]
       ]

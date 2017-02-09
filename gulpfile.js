@@ -25,6 +25,16 @@ gulp.task('elm', ['elm-init'], function(){
 
 gulp.task('elm-bundle', ['elm-init'], function(){
   return gulp.src('src/elm/*.elm')
+    .pipe(plumber({
+        errorHandler: notify.onError({
+            title: 'Elm Error',
+            message: function (error) {
+                process.stdout.write('\x07');
+                gutil.log('[ELM]', error);
+                return error.message;
+            }
+        })
+    }))
     .pipe(elm.bundle('elm.js'))
     .pipe(gulp.dest('dist/js/'));
 });

@@ -14,7 +14,8 @@ All of the Elm code lives in `src/elm/Main.elm` and relies on the [elm-lang/html
 Run the following command from the root of this project:
 
 ```bash
-yarn start
+yarn install
+gulp
 ```
 
 Then go to `localhost:3000` in your browser!

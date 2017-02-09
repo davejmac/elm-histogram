@@ -1,8 +1,6 @@
 import Html exposing (Html, button, div, text, input, h2, p)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick, onInput)
-import String exposing (join)
-
 
 
 main =

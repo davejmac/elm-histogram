@@ -8261,27 +8261,25 @@ var _elm_lang$html$Html_Events$Options = F2(
 	});
 
 var _davejmac$elm_histogram$Main$update = F2(
-	function (msg, model) {
-		var _p0 = msg;
+	function (action, model) {
+		var _p0 = action;
 		if (_p0.ctor === 'Add') {
 			return _elm_lang$core$Native_Utils.update(
 				model,
-				{
-					valuesList: A2(
-						_elm_lang$core$Basics_ops['++'],
-						model.valuesList,
-						A2(_elm_lang$core$Basics_ops['++'], ', ', model.newValue))
-				});
+				{frequencies: model.frequencies});
 		} else {
 			return _elm_lang$core$Native_Utils.update(
 				model,
 				{newValue: _p0._0});
 		}
 	});
-var _davejmac$elm_histogram$Main$model = {valuesList: '', newValue: ''};
+var _davejmac$elm_histogram$Main$model = {
+	newValue: '',
+	frequencies: {}
+};
 var _davejmac$elm_histogram$Main$Model = F2(
 	function (a, b) {
-		return {valuesList: a, newValue: b};
+		return {newValue: a, frequencies: b};
 	});
 var _davejmac$elm_histogram$Main$NewValue = function (a) {
 	return {ctor: 'NewValue', _0: a};
@@ -8335,40 +8333,7 @@ var _davejmac$elm_histogram$Main$view = function (model) {
 						_1: {ctor: '[]'}
 					}
 				}),
-			_1: {
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$div,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('chart'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$h2,
-							{ctor: '[]'},
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html$text('Numbers'),
-								_1: {ctor: '[]'}
-							}),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$p,
-								{ctor: '[]'},
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html$text(model.valuesList),
-									_1: {ctor: '[]'}
-								}),
-							_1: {ctor: '[]'}
-						}
-					}),
-				_1: {ctor: '[]'}
-			}
+			_1: {ctor: '[]'}
 		});
 };
 var _davejmac$elm_histogram$Main$main = _elm_lang$html$Html$beginnerProgram(

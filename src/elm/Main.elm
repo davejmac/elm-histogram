@@ -1,6 +1,7 @@
 import Html exposing (Html, button, div, text, input, h2, p)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick, onInput)
+import Dict
 
 
 main =
@@ -11,37 +12,37 @@ main =
     }
 
 
-
 -- MODEL
 
 
 type alias Model =
-  { valuesList : String
-  , newValue : String
+  { newValue : String
+  , frequencies : {}
   }
 
 
 model : Model
 model =
-  { valuesList = ""
-  , newValue = ""
+  { newValue = ""
+  , frequencies = {}
+  --, frequencies = Dict.empty
   }
-
 
 
 -- UPDATE
 
 
-type Msg
+type Action
     = Add
     | NewValue String
 
 
-update : Msg -> Model -> Model
-update msg model =
-  case msg of
+update : Action -> Model -> Model
+update action model =
+  case action of
     Add ->
-      { model | valuesList = model.valuesList ++ ", " ++ model.newValue }
+      --{ model | frequencies = model.frequencies ++ ", " ++ model.newValue }
+      { model | frequencies = model.frequencies }
     NewValue text_input ->
       { model | newValue = text_input }
 
@@ -49,15 +50,26 @@ update msg model =
 -- VIEW
 
 
-view : Model -> Html Msg
+view : Model -> Html Action
 view model =
   div []
     [ div [class "input-data"]
         [ input [ type_ "number", placeholder "Some Number", onInput NewValue ] []
         , button [ onClick Add ] [ text "Add" ]
         ]
-    , div [ class "chart" ]
-      [ h2 [] [ (text "Numbers") ]
-      , p [] [ (text model.valuesList) ]
-      ]
+    --, viewFrequencyDistribution model
     ]
+
+
+-- viewFrequencyDistribution : Model -> Html Action
+-- viewFrequencyDistribution model =
+--     let
+--       frequencies =
+--         model.frequencies
+--           |> Dict.values
+--     in
+--       div
+--         [ class "frequency-distribution" ]
+--           [ h2 [] [ text "Frequency Distribution" ]
+--           , frequencies
+--           ]
